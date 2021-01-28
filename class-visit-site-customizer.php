@@ -87,11 +87,15 @@ if ( ! class_exists( 'Visit_Site_From_Customizer' ) ) :
 			// Enqueue JS.
 			wp_enqueue_script( 'visit-site-from-customizer', VISIT_SITE_FROM_CUSTOMIZER_URI . 'assets/js/customizer-visit-site.js', array( 'jquery' ), null, true );
 
+			$url = get_site_url();
+			if( isset( $_GET['url'] ) && ! empty( $_GET['url'] ) ) {
+				$url = urldecode($_GET['url']);
+			}
 			// Add localize JS.
 			wp_localize_script( 'visit-site-from-customizer', 'visitSiteCustomizer', apply_filters( 'Visit_Site_From_Customizer_js_localize', array(
 				'customizer' => array(
 					'visitSite'   => __( 'Visit Site', 'visit-site-customizer' ),
-					'siteUrl' => get_site_url(),
+					'siteUrl' => $url,
 				),
 			) ) );
 		}
