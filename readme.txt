@@ -4,6 +4,8 @@ Tags: any theme, visit site from customizer , customizer
 Tested up to: 4.8.2
 Stable tag: 1.0.0
 Requires at least: 4.4
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Visit Site from customizer interface.
 
